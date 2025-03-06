@@ -20,3 +20,5 @@ set("v", "<space>x", ":lua<CR>")
 
 set("n", "<M-j>", "<cmd>cnext<CR>")
 set("n", "<M-k>", "<cmd>cprev<CR>")
+
+set("n", "<leader>ft", "<cmd>NvimTreeFindFileToggle<cr>")

@@ -1,5 +1,14 @@
 require("config.lazy")
 
+-- vim.cmd([[
+-- 	highlight Normal guibg=none
+-- 	highlight Nontext guibg=none
+-- 	highlight Nontext ctermbg=none
+-- 	highlight Normal ctermbg=none
+-- 	highlight NormalFloat guibg=none
+-- 	highlight NormalFloat ctermbg=none
+-- ]])
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`

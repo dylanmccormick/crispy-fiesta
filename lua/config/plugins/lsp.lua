@@ -107,6 +107,26 @@ return {
 				},
 				terraformls = {},
 				marksman = {},
+				groovyls = {
+					cmd = {
+						"java",
+						"-jar",
+						"/home/wildkarrde/lsps/groovy-language-server/build/libs/groovy-language-server-all.jar",
+					},
+					on_attach = on_attach,
+					filetypes = { "groovy" },
+					settings = {
+						groovy = {
+							java = {
+								home = { "/usr/java/jdk-21-oracle-x64" },
+							},
+							classpath = {
+								"/home/wildkarrde/lsps/groovy-language-server/build/libs/groovy-language-server-all.jar",
+								"/home/wildkarrde/lsps/groovy-language-server/build/libs/groovy-language-server.jar",
+							},
+						},
+					},
+				},
 			}
 
 			local servers_to_install = vim.tbl_filter(function(key)
