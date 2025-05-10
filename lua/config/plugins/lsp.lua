@@ -33,16 +33,17 @@ return {
 			local servers = {
 				bashls = true,
 				gopls = {
+					on_attach = on_attach,
+					capabilities = capabilities,
+					cmd = { "gopls", "--remote=auto" },
+					filetypes = { "go", "gomod", "gowork", "gotmpl" },
 					settings = {
 						gopls = {
-							hints = {
-								assignVariableTypes = true,
-								compositeLiteralFields = true,
-								compositeLiteralTypes = true,
-								constantValues = true,
-								functionTypeParameters = true,
-								parameterNames = true,
-								rangeVariableTypes = true,
+							staticcheck = true,
+							completeUnimported = true,
+							usePlaceholders = false,
+							analyses = {
+								unusedparams = true,
 							},
 						},
 					},
@@ -143,6 +144,7 @@ return {
 				"stylua",
 				"lua_ls",
 				"delve",
+				"gopls",
 			}
 
 			vim.list_extend(ensure_installed, servers_to_install)
@@ -203,6 +205,7 @@ return {
 					lua = { "stylua" },
 					terraform = { "terraform_fmt" },
 					json = { "fixjson" },
+					go = { "gopls" },
 				},
 			})
 
